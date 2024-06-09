@@ -40,6 +40,10 @@ npm i
 ```
 npm run dev
 ```
+или
+```
+node .\parking-backend.js
+```
 
 ## URL для запроса
 ```
