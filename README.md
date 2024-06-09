@@ -17,7 +17,7 @@ host:"hostname",//имя хоста
 port:5432,//порт
 database:"databsename"//имя базы данных
 ```
-* В posgresql создать таблицу с помощью скрипта из database.sql
+* В posgresql создаете таблицу с помощью скрипта из database.sql
 ```sql
 create table parkingplace(
 placeid SERIAL PRIMARY KEY,
