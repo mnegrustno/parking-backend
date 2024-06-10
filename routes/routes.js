@@ -4,6 +4,6 @@ const router = new Router();
 
 const parkingController = require('../controller/parking.controller');
 
-router.post('/createplace', parkingController.createPlace);
+router.post('/form', parkingController.createPlace);
 
 module.exports = router;
