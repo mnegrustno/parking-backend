@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
+const addingData = require('./query.js')
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 app.post('/form.html', (req, res) => {
     const { email, fullname, placetype, parkingPlace, starttime, endtime } = req.body;
     console.log(email, fullname, placetype, parkingPlace, starttime, endtime);
+    addingData(email, fullname, placetype, parkingPlace, starttime, endtime)
     res.redirect('/successfully.html');
 });
 
