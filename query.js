@@ -4,6 +4,6 @@ const addingData = async (email, fullname, placetype, parkingPlace, starttime, e
 
     await db.query(
         'INSERT INTO parkingplace(email,fullname,placetype,starttime,endtime) values($1,$2,$3,$4,$5) RETURNING *',
-        [decryptoEmail, decryptoFullName, decryptoPlacetype, decryptoStarttime, decryptoEndtime]
+        [decryptoEmail, decryptoFullName, placetype, parkingPlace, starttime, endtime]
     );
 }
