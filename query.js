@@ -7,7 +7,7 @@ const addingData = async (email, fullname, placetype, parkingplace, starttime, e
     const cryptoFullName = crypto.createHash('sha256').update(fullname).digest('hex'); 
 
     await pool.query(
-        'INSERT INTO parkingplace(email,fullname,placetype,parkingplace,starttime,endtime) values($1,$2,$3,$4,$5,$6) RETURNING *',
+        'INSERT INTO parkingplace(email,fullname,place_type,parking_place,start_time,end_time,state) values($1,$2,$3,$4,$5,$6,true) RETURNING *',
         [cryptoEmail, cryptoFullName, placetype, parkingplace, starttime, endtime]
     );
 }

@@ -1,6 +1,9 @@
 const db = require('../database');
 const crypto = require('crypto');
 
+// this file dtnt use on code, but don't touch this
+// this file for testing a database
+
 class ParkingController {
     async createPlace(req, res) {
         //Принимает данные
@@ -15,7 +18,7 @@ class ParkingController {
 
         //Отправка данных в бд
         const newPlace = await db.query(
-            'INSERT INTO parkingplace(email,fullname,placetype,starttime,endtime) values($1,$2,$3,$4,$5) RETURNING *',
+            'INSERT INTO parkingplace(email,fullname,placetype,starttime,endtime, state) values($1,$2,$3,$4,$5,true) RETURNING *',
             [decryptoEmail, decryptoFullName, decryptoPlacetype, decryptoStarttime, decryptoEndtime]
         );
         console.log(email, fullname, placetype, starttime, endtime);
